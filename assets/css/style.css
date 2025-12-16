@@ -1,0 +1,142 @@
+/* =========================
+   Root Variables
+========================= */
+:root {
+  --accent: #c77;
+  --muted: #666;
+}
+
+/* =========================
+   Base Styles
+========================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin: 0;
+  color: #222;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* =========================
+   Header
+========================= */
+.site-header {
+  background: #fff;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  display: inline-block;
+  margin: 0;
+  color: var(--accent);
+}
+
+.site-header nav {
+  float: right;
+}
+
+.site-header nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+}
+
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  padding: 2rem;
+  background: linear-gradient(90deg, #fff, #fdf6f6);
+  text-align: center;
+}
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* =========================
+   Product Grid
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.product {
+  border: 1px solid #eee;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.product img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: contain;
+}
+
+.price {
+  font-weight: bold;
+  color: #333;
+}
+
+/* =========================
+   Product Detail
+========================= */
+.product-detail {
+  display: flex;
+  gap: 2rem;
+}
+
+.product-detail .left,
+.product-detail .right {
+  flex: 1;
+}
+
+/* =========================
+   Forms & Auth
+========================= */
+.auth {
+  max-width: 420px;
+  margin: 3rem auto;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.4rem 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--muted);
+}
