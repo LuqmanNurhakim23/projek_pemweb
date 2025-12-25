@@ -10,56 +10,96 @@
    Base Styles
 ========================= */
 body {
+  background: url(../images/background.png);
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
   margin: 0;
   color: #222;
 }
 
-.container {
+.custom-container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 /* =========================
    Header
 ========================= */
 .site-header {
-  background: #fff;
+  background: linear-gradient(90deg, #f5cfe1, #f8acd0) ;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #f5cfe1;
+}
+
+.site-header .nav-link.active {
+  font-weight: 600;
+  color: #c96b84;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
 }
 
 .brand {
-  display: inline-block;
+  font-family: 'Playfair Display',serif;
+  display: inline-block;  
   margin: 0;
   color: var(--accent);
 }
 
-.site-header nav {
-  float: right;
-}
-
-.site-header nav a {
+.site-header .nav-link {
   margin-left: 1rem;
   text-decoration: none;
-  color: #333;
+  color: #7a2e3a;
+  font-weight: 500;
+}
+
+.site-header .navlink:hover {
+  color: #863849;
+}
+
+.profile-btn {
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  border-radius: 50%;
+  background-color: #fbe4ea;
+}
+
+.profile-btn img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.profile-btn img:hover {
+  transform: scale(1.08);
+  border-color: #c96b84;
 }
 
 /* =========================
    Hero Section
 ========================= */
 .hero {
-  padding: 2rem;
-  background: linear-gradient(90deg, #fff, #fdf6f6);
+  margin: 2rem auto;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  background: linear-gradient(90deg, #f5cfe1, #f7bdd8);
   text-align: center;
 }
 
 /* =========================
    Buttons
 ========================= */
-.btn {
+.btn-theme {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -129,6 +169,24 @@ textarea {
   border: 1px solid #ddd;
   border-radius: 6px;
 }
+
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8d7e4, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-card {
+  background: #fff;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
 
 /* =========================
    Footer
