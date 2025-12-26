@@ -9,30 +9,48 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="costum-container header-inner">
-      <h1 class="brand">
-        <img src="logodisini ya" alt="">
-        <span>Le Velours</span>
-      </h1>
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Beranda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="cart.html">Keranjang</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="about.html">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="profile-btn" href="profile.html">
-            <img src="assets/images/default-profile.png" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-  </header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
 
+      <!-- Brand -->
+        <h1 class="brand">
+          <img src="assets/images/logo.png" alt="Le Velours Logo" class="brand-logo">
+          <span>Le Velours</span>
+        </h1>
+
+      <!-- Hamburger -->
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="cart.html">Keranjang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="profile-btn" id="profileBtn" href="#">
+                <img id="navAvatar" src="assets/images/default-profile.png" alt="Profile">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
   <main class="custom-container">
     <section class="hero">
       <h2>Rangkaian Produk Kecantikan Pilihan</h2>
