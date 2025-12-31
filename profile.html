@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
 
       <!-- Brand -->
@@ -35,6 +35,9 @@
               <a class="nav-link active" href="index.html">Beranda</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">Katalog</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link active" href="cart.html">Keranjang</a>
             </li>
             <li class="nav-item">
@@ -56,7 +59,7 @@
     <div class="row justify-content-center">
       <div class="col-md-6">
 
-        <div class="card shadow-sm p-4">
+        <div class="hero card shadow-sm p-4">
           <div class="text-center">
 
             <!-- Foto Profile -->
@@ -71,36 +74,28 @@
             <p id="profileEmail" class="text-muted mb-3">-</p>
 
           </div>
-
           <!-- FORM EDIT PROFILE -->
           <div class="mt-3">
             <label class="form-label">Nama</label>
             <input id="nameInput" class="form-control mb-2" placeholder="Nama kamu">
-
             <label class="form-label">Email</label>
             <input id="emailInput" class="form-control mb-2" placeholder="Email kamu">
-
             <label class="form-label">Foto Profil</label>
             <input type="file"
                   class="form-control mb-3"
                   accept="image/*"
                   onchange="changePhoto(event)">
-
             <button class="btn btn-primary w-100" onclick="saveProfile()">
               Simpan Profil
             </button>
-
             <a href="order-history.html" class="btn btn-outline-secondary w-100 mt-2">
               Riwayat Pesanan
             </a>
-
-            <button class="btn btn-outline-danger w-100 mt-3" onclick="logout()">
+            <button class="btn-theme btn btn-outline-danger w-100 mt-3" onclick="logout()">
               Logout
             </button>
           </div>
-
         </div>
-
       </div>
     </div>
   </main>

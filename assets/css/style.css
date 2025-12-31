@@ -27,11 +27,16 @@ body {
 /* =========================
    Header
 ========================= */
-.site-header {
-  background: linear-gradient(90deg, #f6a3ab, #f5cfe1) ;
+.site-header .navbar {
+  background: linear-gradient(90deg, #f7bdd8, #f5d5e4) ;
   margin-bottom: 1rem;
   border-bottom: 1px solid #f5cfe1;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
+
+/* .site-header .navbar {
+  background: linear-gradient(90deg, #f7bdd8, #f5cfe1);
+} */
 
 .site-header .nav-link.active {
   font-weight: 600;
@@ -63,7 +68,7 @@ body {
 .site-header .nav-link {
   margin-left: 1rem;
   text-decoration: none;
-  color: #7a2e3a;
+  color: #f7bdd8;
   font-weight: 500;
 }
 
@@ -133,11 +138,12 @@ body {
    Hero Section
 ========================= */
 .hero {
-  margin: 2rem auto;
+  margin: 70px 2rem auto;
   padding: 3rem 2rem;
   border-radius: 16px;
-  background: linear-gradient(90deg, #f5cfe1, #f7bdd8);
+  background: #f7bdd8;
   text-align: center;
+  scroll-margin-top: 100px;
 }
 
 /* =========================
@@ -147,11 +153,16 @@ body {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  background: var(--accent);
-  color: #fff;
+  background: #e0658b;
+  color: white;
   text-decoration: none;
   border: none;
   cursor: pointer;
+}
+
+.btn-theme:hover {
+  background: #f3b6c8;
+  color: #7a2e3a;
 }
 
 /* =========================
@@ -165,7 +176,8 @@ body {
 }
 
 .product {
-  border: 1px solid #eee;
+  background-color: #f8d7da;
+  color: #c96b84 ;
   padding: 1rem;
   text-align: center;
   border-radius: 8px;
@@ -175,12 +187,52 @@ body {
   max-width: 100%;
   height: 150px;
   object-fit: contain;
+  border: 2px solid #eeeeee;
+  border-radius: 8px;
 }
 
 .price {
   font-weight: bold;
   color: #333;
 }
+
+/* =========================
+   pill menu
+========================= */
+.brand-pill-wrapper {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.brand-pill-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.pill {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #fbe4ea;
+  color: #7a2e3a;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pill:hover {
+  background: #f3b6c8;
+  color: white;
+}
+
+.pill.active {
+  background: #e0658b;
+  color: white;
+}
+
 
 /* =========================
    Product Detail

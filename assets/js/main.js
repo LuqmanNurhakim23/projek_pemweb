@@ -173,3 +173,27 @@ function logout() {
   localStorage.removeItem("isLogin");
   window.location.href = "login.html";
 }
+
+/* =================================
+   FILTER BRAND (PILL MENU)
+================================= */
+function filterBrand(brand, el) {
+  const products = document.querySelectorAll(".product");
+  const pills = document.querySelectorAll(".pill");
+
+  // ganti pill aktif
+  pills.forEach(p => p.classList.remove("active"));
+  el.classList.add("active");
+
+  // filter produk
+  products.forEach(product => {
+    const productBrand = product.dataset.brand;
+
+    if (brand === "all" || productBrand === brand) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+
