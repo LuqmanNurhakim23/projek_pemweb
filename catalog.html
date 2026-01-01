@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="shortcut icon" href="assets/images/logo-brand.png" type="image/x-icon">
   <title>Le velours</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -66,62 +67,142 @@
       </div>
       <div class="grid products">
         <div class="product" data-brand="somethinc">
-          <img src="assets/images/somethinccc.png "" alt="">
+          <img src="assets/images/somethinccc.png" alt="">
           <h4>SOMETHINC</h4>
-          <a class="btn-theme" href="product.html">Lihat</a>
+          <a class="btn-theme" href="product.html"
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'assets/images/somethinccc.png',
+              'Deskripsi produk'
+            )">Lihat
+          </a>
         </div>
         <div class="product" data-brand="somethinc">
           <img src="assets/images/scarlett.jpeg.png" alt="">
           <h4>Scarlett</h4>
-          <a class="btn-theme" href="product.html">Lihat</a>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'assets/images/scarlett.jpeg.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
         </div>
         <div class="product" data-brand="somethinc">
           <img src="assets/images/avoskin.jpg" alt="">
           <h4>Avoskin</h4>
-          <a class="btn-theme" href="product.html">Lihat</a>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
         </div>
         <div class="product" data-brand="scarlett">
           <img src="assets/images/skinaqua.jpeg" alt="">
           <h4>Sunscreen Skin Aqua</h4>
           <p class="price">Rp 50.000</p>
-          <a class="btn-theme" href="product.html">Lihat</a>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
         </div>
         <div class="product" data-brand="scarlett">
           <img src="assets/images/kahf.jpeg" alt="">
           <h4>Sunscreen Kahf</h4>
           <p class="price">Rp 99.000</p>
-          <a class="btn-theme" href="product.html">Lihat</a>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
         </div>
         <div class="product" data-brand="scarlett">
-            <img src="assets/images/harlettelogo.jpg" alt="">
-            <h4>harlette series</h4>
-            <p class="price">Rp 60.000</p>
-            <a class="btn-theme" href="product.html">Lihat</a>
-          </div>
-          <div class="product" data-brand="avoskin">
-            <img src="assets/images/finally found you logo.jpg" alt="">
-            <h4>finally found you series</h4>
-            <p class="price">Rp 120.000</p>
-            <a class="btn-theme" href="product.html">Lihat</a>
-          </div>
-          <div class="product" data-brand="avoskin">
-            <img src="assets/images/npurelogo.webp" alt="">
-            <h4>n'pure the series</h4>
-            <p class="price">Rp 45.000</p>
-            <a class="btn-theme" href="product.html">Lihat</a>
-          </div>
-          <div class="product" data-brand="avoskin">
-            <img src="assets/images/the originote logo.jpg" alt="">
-            <h4>teh originote series</h4>
-            <p class="price"></p>
-            <a class="btn-theme" href="product.html">Lihat</a>
-          </div>
-          <div class="product" data-brand="npure">
-            <img src="assets/images/msglow logo.jpg" alt="">
-            <h4>ms glow series</h4>
-            <p class="price">Rp</p>
-            <a class="btn-theme" href="product.html">Lihat</a>
-          </div>
+          <img src="assets/images/harlettelogo.jpg" alt="">
+          <h4>harlette series</h4>
+          <p class="price">Rp 60.000</p>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
+        </div>
+        <div class="product" data-brand="avoskin">
+          <img src="assets/images/finally found you logo.jpg" alt="">
+          <h4>finally found you series</h4>
+          <p class="price">Rp 120.000</p>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
+        </div>
+        <div class="product" data-brand="avoskin">
+          <img src="assets/images/npurelogo.webp" alt="">
+          <h4>n'pure the series</h4>
+          <p class="price">Rp 45.000</p>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
+        </div>
+        <div class="product" data-brand="avoskin">
+          <img src="assets/images/the originote logo.jpg" alt="">
+          <h4>teh originote series</h4>
+          <p class="price"></p>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
+        </div>
+        <div class="product" data-brand="npure">
+          <img src="assets/images/msglow logo.jpg" alt="">
+          <h4>ms glow series</h4>
+          <p class="price">Rp</p>
+          <a class="btn-theme" href="product.html" 
+            onclick="selectProduct(
+              'Nama Produk',
+              'Merek',
+              'Harga',
+              'path/gambar.png',
+              'Deskripsi produk'
+          )">Lihat
+          </a>
+        </div>
       </div>
     </section>
   </main>

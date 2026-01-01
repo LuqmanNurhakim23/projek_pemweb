@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initAvatar();
   protectProfilePage();
   loadProfile();
+  loadProductDetail();
 
 });
 
@@ -197,3 +198,41 @@ function filterBrand(brand, el) {
   });
 }
 
+
+/* =================================
+   SELECT PRODUCT (FROM CATALOG)
+================================= */
+function selectProduct(name, brand, price, image, desc) {
+  const product = {
+    name,
+    brand,
+    price,
+    image,
+    desc
+  };
+
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+}
+
+
+/* =================================
+   LOAD PRODUCT DETAIL
+================================= */
+function loadProductDetail() {
+  const data = localStorage.getItem("selectedProduct");
+  if (!data) return;
+
+  const product = JSON.parse(data);
+
+  const nameEl = document.getElementById("productName");
+  const brandEl = document.getElementById("productBrand");
+  const priceEl = document.getElementById("productPrice");
+  const imgEl = document.getElementById("productImage");
+  const descEl = document.getElementById("productDesc");
+
+  if (nameEl) nameEl.textContent = product.name;
+  if (brandEl) brandEl.textContent = product.brand;
+  if (priceEl) priceEl.textContent = product.price;
+  if (imgEl) imgEl.src = product.image;
+  if (descEl) descEl.textContent = product.desc;
+}

@@ -3,36 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="assets/images/logo-brand.png" type="image/x-icon">
   <title>Le velours - Detail Produk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Socmetik</h1>
-      <nav>
-        <a href="index.html">Beranda</a>
-        <a href="catalog.html">Katalog</a>
-        <a href="about.html">Tentang</a>
-        <a href="contact.html">Kontak</a>
-      </nav>
-    </div>
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+
+      <!-- Brand -->
+        <h1 class="brand">
+          <img src="assets/images/logo.png" alt="Le Velours Logo" class="brand-logo">
+          <span>Le Velours</span>
+        </h1>
+
+      <!-- Hamburger -->
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">Katalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="cart.html">Keranjang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="profile-btn" id="profileBtn" href="#">
+                <img id="navAvatar" src="assets/images/default-profile.png" alt="Profile">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <main class="container product-detail">
+  <main class="custom-container mt-5">
+    <a href="catalog.html" class="btn-back mb-3 d-inline-block">
+      ← Kembali ke Katalog
+    </a>
+    <div class="product-detail">
+      
+    <!-- KIRI: GAMBAR -->
     <div class="left">
-      <img src="assets/images/product-placeholder.png" alt="Produk">
+      <img id="productImage" src="assets/images/somethinccc.png" alt="Produk">
     </div>
+
+    <!-- KANAN: INFO -->
     <div class="right">
-      <h2>Nama Produk A</h2>
-      <p class="price">Rp 120.000</p>
-      <p>Deskripsi singkat produk. Bahan-bahan, manfaat, cara pakai.</p>
-      <div class="actions">
-        <input type="number" id="qty" value="1" min="1">
-        <button id="addCart" class="btn">Tambah ke Keranjang</button>
-      </div>
+      <h2 id="productName">Nama Produk</h2>
+      <p class="brand-name" id="productBrand">Brand</p>
+      <p class="price" id="productPrice">Rp 0</p>
+
+      <p class="description" id="productDesc">
+        Deskripsi produk akan muncul di sini.
+      </p>
+
+      <button id="addCart" class="btn-theme">
+        Tambah ke Keranjang
+      </button>
     </div>
-  </main>
+
+  </div>
+</main>
 
   <footer class="site-footer">
     <div class="container">

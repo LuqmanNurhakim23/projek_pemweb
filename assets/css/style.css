@@ -165,6 +165,25 @@ body {
   color: #7a2e3a;
 }
 
+.btn-back {
+  margin-top: 70px;
+  display: inline-block;
+  width: fit-content;
+  background: #e0658b;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+  background: #f3b6c8;
+  color: #7a2e3a;
+}
+
+
 /* =========================
    Product Grid
 ========================= */
@@ -195,6 +214,44 @@ body {
   font-weight: bold;
   color: #333;
 }
+
+/* =========================
+   product detail
+========================= */
+.product-detail {
+  margin: 0 2rem;
+  display: flex;
+  gap: 2rem;
+  background: #f7bdd8;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.product-detail .left img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+}
+
+.brand-name {
+  color: #c96b84;
+  font-weight: 600;
+}
+
+.description {
+  color: #555;
+  margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
 
 /* =========================
    pill menu
