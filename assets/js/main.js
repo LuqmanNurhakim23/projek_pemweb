@@ -10,18 +10,42 @@ document.addEventListener("DOMContentLoaded", function () {
   protectProfilePage();
   loadProfile();
   loadProductDetail();
+  loadOrderHistory();
 
 });
 
 /* =================================
-   ADD TO CART (DEMO)
+   ADD TO CART
 ================================= */
 function initAddToCart() {
   document.addEventListener("click", function (e) {
     if (e.target && e.target.id === "addCart") {
-      alert("Produk ditambahkan ke keranjang (demo).");
+      addToCart(); 
     }
   });
+}
+
+function addToCart() {
+  const data = localStorage.getItem("selectedProduct");
+  if (!data) return;
+
+  const product = JSON.parse(data);
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push(product);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  showCartPopup();
+}
+
+function showCartPopup() {
+  document.getElementById("cartPopup")?.classList.add("active");
+}
+
+function closePopup() {
+  document.getElementById("cartPopup")?.classList.remove("active");
 }
 
 /* =================================
@@ -235,4 +259,147 @@ function loadProductDetail() {
   if (priceEl) priceEl.textContent = product.price;
   if (imgEl) imgEl.src = product.image;
   if (descEl) descEl.textContent = product.desc;
+}
+
+function renderCart() {
+  const cartItemsEl = document.getElementById("cartItems");
+  const cartFooter = document.getElementById("cartFooter");
+  const cartTotalEl = document.getElementById("cartTotal");
+
+  if (!cartItemsEl) return;
+
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cartItemsEl.innerHTML = "";
+
+  if (cart.length === 0) {
+    cartItemsEl.innerHTML =
+      `<p class="empty-cart">Keranjang kosong. Tambahkan produk dari katalog.</p>`;
+    cartFooter.style.display = "none";
+    return;
+  }
+
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price;
+
+    cartItemsEl.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div>
+          <h5>${item.name}</h5>
+          <p class="price">Rp ${item.price.toLocaleString()}</p>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart(${index})">Hapus</button>
+      </div>
+    `;
+  });
+
+  cartTotalEl.textContent = "Rp " + total.toLocaleString();
+  cartFooter.style.display = "block";
+}
+
+function removeFromCart(index) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+/* auto jalan saat halaman cart dibuka */
+document.addEventListener("DOMContentLoaded", renderCart);
+
+const checkoutForm = document.getElementById("checkoutForm");
+
+if (checkoutForm) {
+  checkoutForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) return;
+
+    const order = {
+      id: "ORD-" + Date.now(),
+      date: new Date().toLocaleDateString("id-ID"),
+      items: cart,
+      status: "Diproses",
+      total: cart.length + " item"
+    };
+
+    let history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+    history.push(order);
+
+    localStorage.setItem("orderHistory", JSON.stringify(history));
+    localStorage.removeItem("cart");
+
+    alert("🎉 Pesanan berhasil! Terima kasih sudah berbelanja.");
+    window.location.href = "order-history.html";
+  });
+}
+
+
+const showBtn = document.getElementById("showEmailForm");
+const closeBtn = document.getElementById("closeForm");
+const form = document.getElementById("contactForm");
+
+if (showBtn && form) {
+  showBtn.addEventListener("click", () => {
+    form.classList.remove("hidden");
+    form.scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+if (closeBtn && form) {
+  closeBtn.addEventListener("click", () => {
+    form.classList.add("hidden");
+  });
+}
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    alert("Terima kasih, Pesan kamu sudah kami terima.");
+    form.reset();
+    form.classList.add("hidden");
+  });
+}
+
+function loadOrderHistory() {
+  const container = document.getElementById("orderList");
+  if (!container) return;
+
+  const orders = JSON.parse(localStorage.getItem("orderHistory")) || [];
+
+  if (orders.length === 0) {
+    container.innerHTML = `<p class="text-muted">Belum ada pesanan.</p>`;
+    return;
+  }
+
+  container.innerHTML = "";
+
+  orders.reverse().forEach(order => {
+    const div = document.createElement("div");
+    div.className = "order-card";
+
+    div.innerHTML = `
+      <div class="order-header">
+        <strong>${order.id}</strong>
+        <span>${order.date}</span>
+      </div>
+
+      <ul class="order-items">
+        ${order.items.map(item => `
+          <li>${item.name} - ${item.price}</li>
+        `).join("")}
+      </ul>
+
+      <div class="order-footer">
+        <span>Status: <b>${order.status}</b></span>
+        <span>Total: <b>${order.total}</b></span>
+      </div>
+    `;
+
+    container.appendChild(div);
+  });
 }

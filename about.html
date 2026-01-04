@@ -3,46 +3,113 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo-brand.png" type="image/x-icon">
   <title>Le Velours</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-light bg-white container">
-      <a class="navbar-brand" href="index.html">Le Velours</a>
-      <button class="navbar-toggler" type="button" id="menuToggleAbout">☰</button>
-      <div class="collapse navbar-collapse" id="navAbout">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="product.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+
+      <!-- Brand -->
+        <h1 class="brand">
+          <img src="assets/images/logo.png" alt="Le Velours Logo" class="brand-logo">
+          <span>Le Velours</span>
+        </h1>
+
+      <!-- Hamburger -->
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">Katalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="cart.html">Keranjang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="profile-btn" id="profileBtn" href="#">
+                <img id="navAvatar" src="assets/images/default-profile.png" alt="Profile">
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
 
-  <main class="container mt-5">
-    <section>
-      <h1>About Us</h1>
-      <p>Le velours berdiri untuk mempromosikan produk kecantikan lokal berkualitas.</p>
-      <img src="images/placeholder.jpg" alt="Team" class="img-fluid image-shadow">
-    </section>
-
-    <section class="mt-4">
-      <h2>Our Values</h2>
-      <ul>
-        <li>Produk lokal berkualitas</li>
-        <li>Transparansi bahan</li>
-        <li>Ramah lingkungan</li>
-      </ul>
-      <p>Lebih lanjut di <a href="https://example.com" target="_blank">website partner</a>.</p>
-    </section>
+  <main class="custom-container mt-5">
+    <div class="hero about-hero">
+    
+      <!-- ABOUT INTRO -->
+      <section class="about-intro">
+        <div class="about-text">
+          <h1>About Le Velours</h1>
+          <p>
+            Le Velours hadir untuk memperkenalkan produk kecantikan lokal
+            berkualitas tinggi yang aman, transparan, dan ramah lingkungan.
+          </p>
+        </div>
+      
+        <div class="about-image">
+          <img src="assets/images/logo-brand.png" alt="Le Velours">
+        </div>
+      </section>
+    
+      <!-- VALUES -->
+      <section class="about-values mt-5">
+        <h2 class="text-center mb-4">Our Values</h2>
+      
+        <div class="values-grid">
+          <div class="value-card">
+            <h4>Lokal Berkualitas</h4>
+            <p>Mendukung brand lokal dengan standar kualitas terbaik.</p>
+          </div>
+        
+          <div class="value-card">
+            <h4>Transparansi</h4>
+            <p>Informasi bahan jelas dan jujur untuk konsumen.</p>
+          </div>
+        
+          <div class="value-card">
+            <h4>Ramah Lingkungan</h4>
+            <p>Mengutamakan keberlanjutan dan kepedulian alam.</p>
+          </div>
+        </div>
+      
+        <p class="text-center mt-4">
+          Kontak Kami
+          <a href="contact.html" target="_blank">Katalog</a>
+        </p>
+      </section>
+    
+    </div>
   </main>
 
-  <footer class="bg-dark text-white text-center p-4 mt-5">
-    <p>© 2025 - Le Velours</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; Le Velours - 2025</p>
+    </div>
   </footer>
+
 
   <script src="js/script.js"></script>
 </body>

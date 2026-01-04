@@ -3,34 +3,86 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="assets/images/logo-brand.png" type="image/x-icon">
   <title>Le velours</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <h1 class="brand">Cosmetik</h1>
-      <nav>
-        <a href="index.html">Beranda</a>
-        <a href="catalog.html">Katalog</a>
-        <a href="about.html">Tentang</a>
-        <a href="contact.html">Kontak</a>
-      </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+
+      <!-- Brand -->
+        <h1 class="brand">
+          <img src="assets/images/logo.png" alt="Le Velours Logo" class="brand-logo">
+          <span>Le Velours</span>
+        </h1>
+
+      <!-- Hamburger -->
+        <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+      <!-- Menu -->
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="catalog.html">Katalog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="cart.html">Keranjang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="profile-btn" id="profileBtn" href="#">
+                <img id="navAvatar" src="assets/images/default-profile.png" alt="Profile">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   </header>
 
-  <main class="container">
-    <h2>Checkout</h2>
-    <form id="checkoutForm">
-      <label>Nama</label><input required>
-      <label>Alamat</label><input required>
-      <label>Metode Pembayaran</label>
-      <select required>
-        <option>Transfer Bank</option>
-        <option>COD</option>
-      </select>
-      <button class="btn" type="submit">Bayar</button>
-    </form>
+  <main class="custom-container">
+    <div class="hero">
+      <h2>Checkout</h2>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-group">
+          <label for="name">Nama Lengkap</label>
+          <input id="name" name="name" type="text" placeholder="Nama penerima" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="address">Alamat Pengiriman</label>
+          <textarea id="address" name="address" rows="3" placeholder="Alamat lengkap" required></textarea>
+        </div>
+      
+        <div class="form-group">
+          <label for="payment">Metode Pembayaran</label>
+          <select id="payment" name="payment" required>
+            <option value="">-- Pilih metode --</option>
+            <option value="transfer">Transfer Bank</option>
+            <option value="cod">COD</option>
+          </select>
+        </div>
+      
+        <button class="btn-theme w-100" type="submit">
+          Bayar Sekarang
+        </button>
+      </form>
+    </div>
   </main>
 
   <footer class="site-footer">

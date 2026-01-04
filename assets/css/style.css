@@ -9,6 +9,10 @@
 /* =========================
    Base Styles
 ========================= */
+html {
+  overflow-y: scroll;
+}
+
 body {
   background: url(../images/background.png);
   background-size: cover;
@@ -304,6 +308,72 @@ body {
   flex: 1;
 }
 
+.cart-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.cart-popup.active {
+  display: flex;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 320px;
+  animation: scaleUp .3s ease;
+}
+
+@keyframes scaleUp {
+  from { transform: scale(.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fbe4ea;
+}
+
+.cart-item h5 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cart-item .price {
+  font-weight: 600;
+  color: #c96b84;
+}
+
+.remove-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #c96b84;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
 /* =========================
    Forms & Auth
 ========================= */
@@ -340,6 +410,42 @@ textarea {
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
+.checkout-form {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+.checkout-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.checkout-form label {
+  font-weight: 600;
+  margin-bottom: .3rem;
+  display: block;
+  color: #7a2e3a;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+  width: 100%;
+  padding: .6rem .7rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+.checkout-form select:focus {
+  outline: none;
+  border-color: #e0658b;
+  box-shadow: 0 0 0 2px rgba(224,101,139,.2);
+}
 
 /* =========================
    Footer
@@ -350,4 +456,141 @@ textarea {
   margin-top: 2rem;
   text-align: center;
   color: var(--muted);
+}
+
+/* =========================
+   About Page
+========================= */
+.about-hero {
+  padding: 3rem 2rem;
+}
+
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  margin-bottom: 1rem;
+}
+
+.about-image img {
+  max-width: 220px;
+}
+
+.about-values {
+  text-align: center;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+
+.value-card h4 {
+  margin-bottom: 0.5rem;
+  color: #c96b84;
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.contact-form {
+  max-width: 420px;
+  margin: 30px auto 0;
+  background: #fff;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  animation: fadeUp .35s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #c96b84;
+}
+
+.order-items {
+  padding-left: 18px;
+  color: #555;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.9rem;
+}
+
+.hero-brand {
+  text-align: center;
+}
+
+.hero-brand h2 {
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.brand-logo-slide {
+  max-height: 600px;
+  object-fit: contain;
+  margin: auto;
+  padding: 20px;
+  filter: grayscale(100%);
+  transition: 0.4s ease;
+}
+
+.carousel-item.active .brand-logo-slide {
+  filter: grayscale(0%);
+  transform: scale(1.08);
 }
