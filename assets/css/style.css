@@ -582,7 +582,8 @@ textarea {
 }
 
 .brand-logo-slide {
-  max-height: 600px;
+  width: 300px;
+  height: 180px;
   object-fit: contain;
   margin: auto;
   padding: 20px;
